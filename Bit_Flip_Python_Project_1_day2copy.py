@@ -76,18 +76,9 @@ print(bin(0b1010 ^ 0b1100))   #The check it should be this number.
 #so will look at in on day 3 aswell.
  
 
-#Day 3: 21/08/26
-#input and conditional:
 
-bit_2 = int(input("Enter a bit, 0 or 1: "))
 
-if bit_2 == 0 or bit_2 == 1:     # = assigns a value, == compares two values
-    flipped_bit_2 = bit_2 ^ 1
 
-    print("Original bit:", bit_2)
-    print("Flipped bit:", flipped_bit_2)
-else:
-    print("That is not a valid bit.")
 
 
 
