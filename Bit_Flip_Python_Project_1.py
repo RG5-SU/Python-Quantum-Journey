@@ -90,11 +90,37 @@ else:
     print("That is not a valid bit.")
 
 
+#Day 4: 22/08/26
+#repeated bit flips
 
+bit_3 = int(input("Enter a starting bit, 0 or 1: "))
+number_of_flips = int(input("How many times should it flip? "))
 
+if (bit_3 == 0 or bit_3 == 1) and number_of_flips >= 0:
+    original_bit = bit_3
 
+    for flip_number in range(1, number_of_flips + 1): #why "+1" here explained below.
+        bit_3 = bit_3 ^ 1
+        print("After flip", flip_number, ":" , bit_3)
 
+    print("Original bit:", original_bit)
+    print("Final bit:", bit_3)
 
+    if bit_3 == original_bit:
+        print("The bit returned to its original value.")
+    else:
+        print("The bit is different from its original value.")
+
+else:
+    print("Invalid input.")
+
+#We do number_of_flips + 1, +1 due to python's range() stops before final number.
+#i.e.
+for number in range(1, 4):
+    print(number)
+#
+#Outputs only: 1,2,3 (vertically no commas)
+#Hence in our code we must do +1 to total number_of_flips to give the full range.
 
 
 
