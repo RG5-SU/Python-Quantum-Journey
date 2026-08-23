@@ -123,7 +123,33 @@ for number in range(1, 4):
 #Hence in our code we must do +1 to total number_of_flips to give the full range.
 
 
+#Day 5: 23/08/26
+#bit flip function
 
+def flip_bit(bit_4):
+    flipped_bit == bit_4 ^ 1
+    return flipped_bit
+
+starting_bit = int(input("Enter a starting bit, 0 or 1: "))
+number_of_flips = int(input("How many times should it flip? "))
+
+if (starting_bit == 0 or starting_bit == 1) and number_of_flips >= 0:
+    current_bit = starting_bit
+
+    for flip_number in range(1, number_of_flips + 1):
+        current_bit = flip_bit(current_bit)
+        print("After flip", flip_number, ":", current_bit)
+
+    print("Original bit:", starting_bit)
+    print("Final bit:", current_bit)
+
+    if current_bit == starting_bit:
+        print("The bit returned to its original value.")
+    else:
+        print("The bit is different from its original value.")
+
+else:
+    print("Invalid input.")
 
 
 
