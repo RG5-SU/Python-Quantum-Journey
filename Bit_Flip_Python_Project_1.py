@@ -151,11 +151,56 @@ if (starting_bit == 0 or starting_bit == 1) and number_of_flips >= 0:
 else:
     print("Invalid input.")
 
+#Day 6: 24/08/26
+#three bit repetition
+
+def flip_bit(bit_5):
+    return bit ^ 1
 
 
+original_bit = int(input("Enter a bit to protect, 0 or 1: "))
+
+if original_bit == 0 or original_bit == 1:
+    codeword = [original_bit, original_bit, original_bit]
+
+    print("Encoded codeword:", codeword)
+
+    error_position = int(
+        input("Which position should flip? Enter 1, 2, 3, or 0 for none: ")
+    )
+
+    if error_position >= 0 and error_position <= 3:
+
+        if error_position != 0:
+            index = error_position - 1
+            codeword[index] = flip_bit(codeword[index])
+
+        print("Received codeword:", codeword)
+
+        number_of_ones = sum(codeword)
+
+        if number_of_ones >= 2:
+            decoded_bit = 1
+        else:
+            decoded_bit = 0
+
+        print("Decoded bit:", decoded_bit)
+
+        if decoded_bit == original_bit:
+            print("The original information was recovered.")
+        else:
+            print("The correction failed.")
+
+    else:
+        print("Invalid error position.")
+
+else:
+    print("Invalid bit.")
 
 
-
+#Debug Day5 and Day 6 tomorrow due to erros, we are getting errors due to 
+#names of variables
+    
 
 
 
