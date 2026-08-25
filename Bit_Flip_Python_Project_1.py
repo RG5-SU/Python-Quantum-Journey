@@ -127,8 +127,8 @@ for number in range(1, 4):
 #bit flip function
 
 def flip_bit(bit_4):
-    flipped_bit == bit_4 ^ 1
-    return flipped_bit
+    flipped_bit_4 = bit_4 ^ 1
+    return flipped_bit_4
 
 starting_bit = int(input("Enter a starting bit, 0 or 1: "))
 number_of_flips = int(input("How many times should it flip? "))
@@ -201,7 +201,10 @@ else:
 #Debug Day5 and Day 6 tomorrow due to erros, we are getting errors due to 
 #names of variables
     
-
+#Day 7:
+#Debug
+#
+    
 
 
 
