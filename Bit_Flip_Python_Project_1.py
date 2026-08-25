@@ -161,7 +161,7 @@ def flip_bit(bit_5):
 original_bit = int(input("Enter a bit to protect, 0 or 1: "))
 
 if original_bit == 0 or original_bit == 1:
-    codeword = [original_bit, original_bit, original_bit]
+    codeword = [original_bit, original_bit, original_bit] #Encode
 
     print("Encoded codeword:", codeword)
 
@@ -172,14 +172,14 @@ if original_bit == 0 or original_bit == 1:
     if error_position >= 0 and error_position <= 3:
 
         if error_position != 0:
-            index = error_position - 1
-            codeword[index] = flip_bit(codeword[index])
+            index = error_position - 1  #Python list beings at 0
+            codeword[index] = flip_bit(codeword[index]) #Simulated damage
 
         print("Received codeword:", codeword)
 
         number_of_ones = sum(codeword)
 
-        if number_of_ones >= 2:
+        if number_of_ones >= 2: #Decode via majority voting
             decoded_bit = 1
         else:
             decoded_bit = 0
@@ -198,13 +198,90 @@ else:
     print("Invalid bit.")
 
 
+#What day 6 does:
+#The program simulates sending one protected classical bit through a noisy channel.
+
+#It performs four jobs:
+
+# Encode: make three copies of the bit.
+# Damage: deliberately flip one selected copy.
+# Decode: use majority voting.
+# Check: compare the recovered result with the original.
+
+
 #Debug Day5 and Day 6 tomorrow due to erros, we are getting errors due to 
 #names of variables
+
     
-#Day 7:
+#Day 7: 25/08/26
 #Debug
-#
+#Fixed the code now it works, accidenetally had line 40 as == when it should have been = 
+
+#Day 7: 25/08/26
+#List of lists, repetition code stress
+
+def decode_codeword_7(codeword_7):
+    number_of_ones_7 = sum(codeword_7)
+
+    if number_of_ones_7 >= 2:
+        return 1
+    else:
+        return 0
+
+original_bit_7 = 1
+
+test_codewords_7 = [
+    [1,1,1],
+    [0,1,1],
+    [1,0,1],
+    [1,1,0],
+    [0,0,1],
+    [0,1,0],
+    [1,0,0],
+]
+
+for codeword_7 in test_codewords_7:
+    decode_bit_7 = decode_codeword_7(codeword_7)
+
+    print("Recieved:",codeword_7)
+    print("Decoded:", decode_bit_7)
+
+    if decode_bit_7 == original_bit_7:
+        print("SUCCESS: original bit recovered")
+    else:
+        print("FAILURE: incorrect result")
+
+    print()
+
+
+#Code works as intended.
+#For the work later on I think it'd be better to just have each subproject into its own file
+#so that I don't have to use variable names relative to the day or after one different
+#section completed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
+
+
 
 
 
